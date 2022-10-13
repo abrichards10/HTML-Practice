@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+<div class="sidebar">
+    <a href="index.html"><i class="fa fa-fw fa-home"></i>Home</a><br><br>
+    <a href="resume_education.html"><i class="fa fa-fw fa-pencil"></i>Education</a><br><br>
+    <a href="resume_experience.html"><i class="fa fa-fw fa-laptop"></i>Experience</a><br><br>
+    <a href="skills.html"><i class="fa fa-fw fa-puzzle-piece"></i>Skills</a><br><br>
+    <a href="resume_contact.html"><i class="fa fa-fw fa-mobile-phone"></i>Contact</a><br><br>
+    <a href="https://github.com/abrichards10?tab=repositories"><i class="fa fa-fw fa-github"></i>Github</a><br><br>
+    <a href="https://www.linkedin.com/in/angela-richards-110864191"><i class="fa fa-fw fa-linkedin-square"></i>LinkedIn</a>
+
+</div>
+
+<head>
+    <script src="https://cdn.anychart.com/releases/8.0.0/js/anychart-base.min.js"></script>
+</head>
+<body>
+        <div id="container" style="width: 100%; height: 100%"></div>
+        <script>
+        anychart.onDocumentReady(function () {
+
+            /* Chart #1 */
+            var data = {
+                header: ["Tech Skill %", "Skill"], 
+                rows: [["Java", 63], ["Python", 90], ["C", 50], ["HTML", 80],
+                ["Fusion 360", 45], ["MS Office", 50], ["SQL", 20],
+                ["Excel", 30], ["Teaching", 95], ["Public Speaking", 70], ["Microinvertebrate Analysis", 40], ["Writing", 85],
+                ["Design", 50], ["Acrylic Painting", 50], ["Communication", 90], ["Memorization", 10], ["Problem Solving", 92]] 
+            };
+
+            /* Set up chart */ 
+            var chart = anychart.bar();
+            var series = chart.bar(data);
+            series.normal().fill("F0F8FF", .5).stroke("none");
+            chart.background().fill("none");
+            chart.data(data);
+
+            /* Labels */ 
+            chart.yAxis().labels().fontFamily("monospace");
+            chart.xAxis().labels().fontFamily("monospace");
+
+            /* Title */ 
+            var title = chart.title();
+            title.fontFamily("monospace");
+            chart.title("Tech Skills by %"); 
+            chart.container("container");
+            chart.draw();
+        });
+        </script>
+</body>
+</html>

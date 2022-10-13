@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
+
+<div class="sidebar">
+<a href="index.html"><i class="fa fa-fw fa-home"></i>Home</a><br><br>
+<a href="resume_education.html"><i class="fa fa-fw fa-pencil"></i>Education</a><br><br>
+<a href="resume_experience.html"><i class="fa fa-fw fa-laptop"></i>Experience</a><br><br>
+<a href="skills.html"><i class="fa fa-fw fa-puzzle-piece"></i>Skills</a><br><br>
+<a href="resume_contact.html"><i class="fa fa-fw fa-mobile-phone"></i>Contact</a><br><br>
+<a href="https://github.com/abrichards10?tab=repositories"><i class="fa fa-fw fa-github"></i>Github</a><br><br>
+<a href="https://www.linkedin.com/in/angela-richards-110864191"><i class="fa fa-fw fa-linkedin-square"></i>LinkedIn</a>
+</div>
+
+<!-- University of San Francisco -->
+<div class= "left">
+<h2> University of San Francisco</h2>
+<h4><i>August 2019 - May 2022</i></h4>
+<ul><li>GPA: 3.63</li>
+</ul>
+
+<button class="accordion">Relevant Coursework</button>
+<div class="panel">
+    <ul><li>Software Development</li>
+        <li>Data Structures and Algorithms</li>
+        <li>Machine Learning</li>
+        <li>Operating Systems</li>
+        <li>Programming Paradigms</li>
+    </ul>
+</div>
+<button class="accordion">Affiliations</button>
+<div class="panel">
+    <ul>
+        <li>Association for Women in Mathematics</li>
+        <li>Breaking Bread and the Binary</li>
+        <li>ASUSF</li>
+    </ul>
+</div>
+<button class="accordion">Awards and Honors</button>
+<div class="panel">
+    <ul>
+        <li>Dean's Honors List</li>
+        <li>GHC21 Attendee</li>
+        <li>McGrath Scholar</li>
+    </ul>
+</div>
+
+<!-- Sierra College -->
+    <h2> Sierra College</h2>
+    <h4><i>August 2015 - June 2019</i></h4>
+    <ul><li>GPA: 3.8</li>
+    </ul>
+    
+    <button class="accordion">Relevant Coursework</button>
+    <div class="panel">
+        <ul><li>Introduction to Computing</li>
+            <li>Programming Concepts and Methodology</li>
+            <li>Analytical Geometry / Calculus 1</li>
+            <li>Analytical Geometry cont. / Calculus 2</li>
+        </ul>
+    </div>
+    <button class="accordion">Affiliations</button>
+    <div class="panel">
+        <ul>
+            <li>Creative Writing Club</li>
+            <li>Dungeons and Dragons Club</li>
+        </ul>
+    </div>
+    <button class="accordion">Awards and Honors</button>
+    <div class="panel">
+        <ul>
+            <li>Associate in Science (A.S) Natural Science</li>
+            <li>Presidents' List</li>
+            <li>CSF Lifetime Member</li>
+            <li>Golden State Seal Merit Diploma</li>
+        </ul>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+</script>
+</html>

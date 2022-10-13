@@ -1,0 +1,930 @@
+body {
+    background-image: url("assets/IronHeart.jpeg");
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, .5);
+    background-blend-mode: lighten, soft-light;
+    color:rgb(0, 0, 0);
+    font-weight: 800, 100;
+    font-family: "Chewy";
+    height: 100%;
+    overflow-x: hidden;
+    cursor: url("assets/iron_man_cursor1.png"), url("assets/iron_man_pointer_better.png"), auto;
+}
+
+.body_transition {
+  animation: fadeInPage ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInPage {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+#showMe {
+  animation: cssAnimation 0s 5s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to { 
+    visibility: visible; 
+  }
+}
+
+html, body, #container {
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+   /* padding-left: 100px; */
+}
+
+#container {
+    padding-left: 10px;
+    font-family:monospace;
+}
+
+.intro-title {
+  font-family: 'RealityCheck';
+  font-size: 100px;
+  text-align: center;
+  text-shadow: 2px 2px rgb(119, 119, 119);
+}
+
+@font-face {
+  font-family: 'RealityCheck';
+  src: url("RealityCheckDEMO.otf") format("opentype");
+}
+
+.overlay {
+  pointer-events: none;
+  opacity: 20%;
+}
+
+/* Sidebar styling */
+.sidebar {
+font-family:"Chewy";
+text-align: right;
+height: 100%;
+width: 150px;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color:rgb(112, 94, 114);
+overflow-x: hidden;
+padding-top: 16px;
+padding-right: 10px;
+transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Sidebar styling links */
+.sidebar a {
+padding: 6px 8px 0px 16px;
+font-size: 20px;
+color:rgb(27, 27, 27);
+}
+
+.sidebar a:hover {
+color: rgb(54, 54, 54);
+}
+
+/* Split screen in half */
+/*.split {
+height: 100%;
+width: 50%;
+position: absolute;
+z-index: 1;
+top: 10;
+overflow-x: scroll;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+*/
+
+/* Left side */
+.left {
+left: 180px;
+margin-left: 20px;
+text-align: left;
+position: absolute;
+}
+
+/* Right side */
+.right {
+right: 0;
+text-align: left 20px;
+position: absolute;
+}
+
+.text_width {
+  max-width:auto;
+  min-width:auto;
+  line-height: 1.7;
+  font-size: 20px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+  
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the accordion panel. Note: hidden by default */
+/* .panel {
+  padding: 0 18px;
+  background-color: none;
+  display: none;
+  overflow: hidden;
+} */
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex-container>*{
+  /* background-color: #218D9B; */
+  /* border: rgb(0, 4, 255); */
+  /* border-style: solid;
+  border-radius: 2px; */
+  text-align: center;
+  align-items: flex-start;
+}
+
+.header_content {
+  font-size: 50px;
+  font-weight: bold;
+  /* border: rgb(255, 0, 0); */
+  /* border-style: solid;
+  border-radius: 2px; */
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  /* background: rgba(159, 226, 255, 0.5); */
+  /* border: #777; */
+  /* border-style: solid;
+  border-radius: 2px;  */
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.experience_row {
+  padding-top: 30px;
+}
+
+.dates {
+  font-size: 16px;
+}
+
+button {
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+}
+
+.button_style {
+  font-family: Comic Sans MS;
+  background-color: transparent;
+  height: 50px;
+  border: none;
+  /* display: inline-block; */
+  cursor: pointer;
+}
+
+.img_style {
+  object-fit: cover;
+  object-position: 10% 10%;
+}
+
+.button1 {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+}
+
+.button1:hover {
+  border: none;
+  color: rgb(230, 230, 230);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left 5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@import url(https://fonts.googleapis.com/css?family=Bangers);
+
+.cntr {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.cntr img {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+}
+
+/* <!-- .cntr:hover{
+  border: solid black 1px;
+} --> */
+
+.cntr:hover > img {
+  display: inline-block;
+}
+
+.cntr > span > p > img {
+  width: 15%;
+  overflow:hidden;
+  vertical-align:middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cntr span, .cntr p, .cntr img {  
+   display: inline-block;
+}
+
+.cntr:hover img {
+  visibility: visible;
+  opacity: 1;
+}
+
+a:hover {
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+}
+
+
+
+/** Comic Book Panels **/
+.comic {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Comic Sans MS';
+  padding: 1vmin;
+  overflow-x: hidden;
+}
+
+@keyframes move_city {
+  50% {
+    background-position: bottom;
+    background-color: rgba(246, 252, 255, 0.5);
+    background-blend-mode: lighten soft-light;
+  }
+}
+
+.panel {
+  background-color:#fff;
+  background-image: url("assets/city_background.jpeg"); 
+  background-position: top;
+  animation: move_city 10s 1; 
+  animation-fill-mode: forwards;
+  border: solid 2px #000;
+  box-shadow: 0 6px 6px -6px #000;
+  display: inline-block;
+  flex: 1 1;
+  height: 300px;
+  margin: 1vmin;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.panel_header {
+  background-color: rgba(246, 252, 255, 0.6);
+  border: solid 2px #000;
+  box-shadow: 0 6px 6px -6px #000;
+  display: inline-block;
+  flex: 1 1;
+  height: 100px;
+  width: 95%;
+  margin: 1vmin;
+  overflow-y: hidden;
+  position: relative;
+  transform: rotate(-2deg);
+  border-width: 5px 3px 3px 5px;
+  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(1deg);
+  border: 5px solid rgb(57, 45, 65);
+}
+
+.panel_summary {
+  background-color: rgba(246, 252, 255, 0.8);
+  border: solid 2px #000;
+  box-shadow: 0 6px 6px -6px #000;
+  display: inline-block;
+  flex: 1 1;
+  height: 60px;
+  width: 95%;
+  margin: 1vmin;
+  padding: 1vmin;
+  overflow-y: hidden;
+  position: relative;
+  transform: rotate(-2deg);
+  border-width: 5px 3px 3px 5px;
+  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(1deg);
+  border: 5px solid rgb(57, 45, 65);
+}
+
+@keyframes increase_font_size {
+  0% {
+    font-size: 31px;
+  }
+  100% {
+    font-size: 32px;
+  }
+}
+
+@keyframes decrease_font_size {
+  0% {
+    font-size: 32px;
+  }
+  100% {
+    font-size: 31px;
+  }
+}
+
+.who_am_i {
+  font-size: 30px;
+}
+
+.who_am_i:hover {
+  color: rgb(31, 31, 31);
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+  animation: increase_font_size 1s forwards;
+}
+
+.who_am_i::after {
+  color: #444;
+  animation: decrease_font_size 1s forwards; 
+}
+
+@keyframes increase_experience_font {
+  0% {
+    font-size: 21px;
+  }
+  100% {
+    font-size: 22px;
+  }
+}
+
+@keyframes decrease_experience_font {
+  0% {
+    font-size: 22px;
+  }
+  100% {
+    font-size: 21px;
+  }
+}
+
+.experience_font {
+  font-size: 20px;
+}
+
+.experience_font:hover {
+  color: rgb(31, 31, 31);
+  cursor: url("assets/iron_man_pointer_better.png"), auto;
+  animation: increase_experience_font 1s forwards; 
+}
+
+.experience_font::after {
+  color: #444;
+  animation: decrease_experience_font 1s forwards; 
+}
+
+@keyframes fade_text {
+  0% {
+    opacity: 0;
+  } 25% {
+    opacity: 0;
+  } 75% {
+    opacity: 0;
+  } 100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.btn:focus {
+  opacity: 1
+}
+
+@keyframes increase_space {
+  0% {
+    font-size: 15%;
+  } 25% {
+    font-size: 18%;
+  } 75% {
+    font-size: 21%;
+  } 100% {
+    font-size: 24%;
+  }
+}
+
+br {
+  content: "";
+  margin: 2em;
+  display: block;
+  animation: increase_space 8s forwards;
+}
+
+.text1 {
+  /* opacity: 0; */
+  background-color:#fff;
+  border:solid 2px #000;
+  margin: 0;
+  padding: 10px 10px;
+  animation: text_height 8s forwards;
+}
+
+
+/* .text1:active {opacity: 1;} */
+
+.text2 {
+  background-color:#fff;
+  border:solid 2px #000;
+  /* margin:0; */
+  padding: 1px 10px 8px;
+  animation: fade_text 11s forwards;
+}
+
+.who_am_i_text {
+  font-size: 20px;
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+@keyframes increase_size {
+  0% {
+    height: 30px;
+  } 25% {
+    height: 32px;
+  } 75% {
+    height: 34px;
+  } 100% {
+    height: 36px;
+  }
+}
+
+.top-left {
+  left:-6px;
+  position: absolute;
+  top:-2px;
+  transform:skew(-15deg);
+  animation: increase_size 8s forwards;
+}
+
+.bottom-right {
+  bottom:-2px;
+  position: static;
+  right:-6px;
+  transform:skew(-15deg);
+}
+/* 
+.fadeElClass {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  background: red;
+} */
+/* 
+.fadeElClass > .text1 {
+  
+} */
+
+.box {
+  background-color: #218D9B;
+  height: 100px;
+  width: 100px;
+}
+
+.transform {
+  -webkit-transition: all 10s ease;  
+  -moz-transition: all 10s ease;  
+  -o-transition: all 10s ease;  
+  -ms-transition: all 10s ease;  
+  transition: all 10s ease;
+}
+
+.transform-active {
+  height: 85vh;
+  width: 200px;
+}
+
+.transform_summary {
+  -webkit-transition: all 1s ease;  
+  -moz-transition: all 1s ease;  
+  -o-transition: all 1s ease;  
+  -ms-transition: all 1s ease;  
+  transition: all 1s ease; 
+}
+
+.transform_summary_active {
+  height: 300px;
+  width: 200px; 
+  overflow-y: visible;
+}
+
+@keyframes fade_summary_in {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.transform_inner_text {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease; 
+}
+
+.transform_inner_text_active {
+  animation: fade_summary_in 2s;
+}
+
+.transform_inner_education_text {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease; 
+}
+
+.transform_inner_education_text_active {
+  animation: fade_summary_in 2s;
+}
+
+.transform_inner_experience_text {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease; 
+}
+
+.transform_inner_experience_text_active {
+  animation: fade_summary_in 2s;
+}
+
+.transform_inner_skills_text {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease; 
+}
+
+.transform_inner_skills_text_active {
+  animation: fade_summary_in 2s;
+}
+
+.transform_education {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;  
+}
+
+.transform_education_active {
+  height: 1000px;
+  width: 200px;
+  overflow-y: visible; 
+}
+
+.transform_experience {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;  
+}
+
+.transform_experience_active {
+  height: 550px;
+  width: 200px; 
+  overflow-y: visible;
+}
+
+.transform_skills {
+  -webkit-transition: all 1s ease;  
+  -moz-transition: all 1s ease;  
+  -o-transition: all 1s ease;  
+  -ms-transition: all 1s ease;  
+  transition: all 1s ease;  
+}
+
+.transform_skills_active {
+  height: 300px;
+  width: 200px; 
+  overflow-y: visible;
+}
+
+.fade_in {
+  -webkit-transition: all 2s ease;  
+  -moz-transition: all 2s ease;  
+  -o-transition: all 2s ease;  
+  -ms-transition: all 2s ease;  
+  transition: all 2s ease;
+}
+
+.fade_in_active {
+  text-decoration: line-through;
+  opacity: 1;
+}
+  
+.speech {
+  background-color:#fff;
+  border:solid 2px #000;
+  border-radius:12px;
+  display:inline-block;
+  margin:.5em;
+  padding:.5em 1em;
+  position:relative;
+}
+
+.speech:before {
+  border:solid 12px transparent;
+  border-left:solid 12px #000;
+  border-top:solid 12px #000;
+  bottom:-24px;
+  content:"";
+  height:0;
+  left:24px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.speech:after {
+  border:solid 10px transparent;
+  border-left:solid 10px #fff;
+  border-top:solid 10px #fff;
+  bottom:-19px;
+  content:"";
+  height:0;
+  left:27px;
+  position:absolute;
+  transform:skew(-15deg);
+  width:0;
+}
+
+.panel:nth-child(1) {
+  flex-basis: 400px;
+}
+.panel:nth-child(2) {
+  flex-basis: 200px;
+}
+.panel:nth-child(3) {
+  flex-basis: 200px;
+}
+.panel:nth-child(4) {
+  flex-basis: 200px;
+}
+.panel:nth-child(5) {
+  flex-basis: 200px;
+}
+.panel:nth-child(6) {
+  flex-basis: 200px;
+}
+.panel:nth-child(7) {
+  flex-basis: 400px;
+}
+.panel:nth-child(8) {
+  flex-basis: 200px;
+}
+.panel:nth-child(9) {
+  flex-basis: 200px;
+}
+
+/* background colours */
+
+.panel:nth-child(4n+1) {
+  transform: rotate(-2deg);
+  /* margin-right: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;  */
+  border-width: 5px 3px 3px 5px;
+  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(2deg);
+  border: 5px solid rgb(57, 45, 65);
+}
+
+.panel:nth-child(4n+2) {
+  background-image: url("assets/profile_pic.png"), auto;
+  transform: rotate(-2deg);
+  /* margin-right: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;  */
+  border-width: 5px 3px 3px 5px;
+  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(2deg);
+  border: 5px solid rgb(57, 45, 65);
+}
+
+.panel:nth-child(4n+3) {
+  background-image:radial-gradient(circle, rgb(88, 131, 88), rgb(73, 88, 42));
+  transform: rotate(2deg);
+  /* margin-right: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;  */
+  border-width: 5px 3px 3px 5px;
+  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(-2deg);
+  border: 5px solid rgb(57, 45, 65);
+}
+
+.panel:nth-child(4n+4) {
+  background-image:radial-gradient(circle, lightcoral, tomato);
+  transform: rotate(-1deg);
+  /* margin-right: 50px;
+  margin-bottom: 20px;
+  margin-left: 20px;  */
+  border-width: 5px 3px 3px 5px;
+  border-radius:95% 4% 97% 5%/4% 94% 3% 95%;
+  transform: rotate(1deg);
+  border: 5px solid rgb(57, 45, 65);
+}
+
+@keyframes fly_across_screen {
+  0% {left: -1000px; top: -800px;}
+  100% {left: 100%; top: 200px;}
+}
+
+@keyframes fire_fly1 {
+  0% {
+    left: -1290px; 
+    top: -800px;}
+  100% {
+    left: 100%; 
+    top: 200px;} 
+}
+
+@keyframes fire_fly2 {  
+  0% {
+    left: -1250px; 
+    top: -800px;}
+  100% {
+    left: 100%; 
+    top: 200px;} 
+}
+
+.iron_heart_flying {
+  left: -1000px;
+  position: absolute;
+  pointer-events: none;
+  animation-name: fly_across_screen;
+  animation-delay: 4s;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  z-index: 9;
+}
+
+.fire_flying1 {
+  left: -1290px;
+  height: 400px;
+  position: absolute;
+  pointer-events: none;
+  animation-name: fire_fly1;
+  animation-delay: 4s;
+  animation-duration: 6s;
+  transform: rotate(20deg);
+  transform: scaleY(-1);
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  z-index: 9;
+}
+
+.fire_flying2 {
+  left: -1250px;
+  height: 480px;
+  position: absolute;
+  pointer-events: none;
+  animation-name: fire_fly2;
+  animation-delay: 4s;
+  animation-duration: 6s;
+  transform: rotate(20deg); 
+  transform: scaleY(-1);
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  z-index: 9;
+ }
+
+@keyframes test_animation {
+  0% {
+    left: 0px; 
+    top: 50px;}
+  100% {
+    left: 100%; 
+    top: 0px;
+  }  
+}
+
+.test_animate {
+  position: absolute;
+  animation-name: test_animation;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  z-index: 9;
+}
